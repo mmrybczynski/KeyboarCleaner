@@ -11,6 +11,17 @@ struct ContentView: View {
     @StateObject private var blocker = KeyboardBlocker()
     var body: some View {
         VStack(spacing: 30) {
+            
+            
+            
+            
+            
+            Toggle("Włącz powiadomienia", isOn: Binding(get: {blocker.isBlocking},
+                        set: {newValue in
+                if newValue {blocker.startBlocking()
+                } else {
+                    blocker.stopBlocking()
+                }})).toggleStyle(SwitchToggleStyle(tint: .blue))
             Image(systemName: blocker.isBlocking ? "keyboard.fill" : "keyboard")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
