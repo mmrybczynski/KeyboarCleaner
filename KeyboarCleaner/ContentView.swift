@@ -10,29 +10,35 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var blocker = KeyboardBlocker()
     var body: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 10) {
             
             
+            Toggle(isOn: Binding(get: {blocker.isBlocking},
+                                 set: {newValue in
+                         if newValue {blocker.startBlocking()
+                         } else {
+                             blocker.stopBlocking()
+                         }})) {
+                             HStack {
+                                 Text("Włącz try czyszczenia klawiatury")
+                                 Spacer()
+                             }
+            }.toggleStyle(SwitchToggleStyle(tint: .blue))
             
+            VStack {
+                Image(systemName: blocker.isBlocking ? "keyboard.fill" : "keyboard")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(blocker.isBlocking ? .red : .green)
+                    .symbolEffect(.bounce, value: blocker.isBlocking)
+                Text(blocker.isBlocking ? "Klawiatura nie aktywna" : "Klawiatura aktywna")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(blocker.isBlocking ? .red : .green)
+            }
             
-            
-            Toggle("Włącz powiadomienia", isOn: Binding(get: {blocker.isBlocking},
-                        set: {newValue in
-                if newValue {blocker.startBlocking()
-                } else {
-                    blocker.stopBlocking()
-                }})).toggleStyle(SwitchToggleStyle(tint: .blue))
-            Image(systemName: blocker.isBlocking ? "keyboard.fill" : "keyboard")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-                .foregroundColor(blocker.isBlocking ? .red : .green)
-                .symbolEffect(.bounce, value: blocker.isBlocking)
-            Text(blocker.isBlocking ? "Tryb czyszczenia aktywny" : "Tryb czyszczenia wyłączony")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(blocker.isBlocking ? .red : .green)
-            Text("Gdy tryb jest aktywny, klawiatura jest wyłączona.\nUżyj myszki/gładzika, aby wyłączyć blokadę.")
+            /*Text("Gdy tryb jest aktywny, klawiatura jest wyłączona.\nUżyj myszki/gładzika, aby wyłączyć blokadę.")
                 .multilineTextAlignment(.center)
                 .font(.caption)
             
@@ -51,11 +57,11 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(12)
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.plain)*/
 
         }
         .padding(50)
-        .frame(minWidth: 400, minHeight: 300)
+        .frame(minWidth: 200, maxWidth: 400, minHeight: 150, maxHeight: 200)
     }
 }
 
