@@ -13,5 +13,6 @@ struct KeyboarCleanerApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowResizability(.contentSize)
     }
 }
