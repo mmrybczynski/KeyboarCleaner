@@ -27,6 +27,12 @@
     "helpWeb" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seite des Erstellers"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -42,7 +48,27 @@
       }
     },
     "Keyboard Cleaner" : {
-
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Cleaner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Cleaner"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard Cleaner"
+          }
+        }
+      }
     },
     "keyboardDisabled" : {
       "extractionState" : "manual",
@@ -90,15 +116,15 @@
         }
       }
     },
-    "Odwiedź stronę twórcy" : {
-
-    },
-    "Read more" : {
-
-    },
     "readMore" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr lesen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",

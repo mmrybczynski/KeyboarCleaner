@@ -9,12 +9,18 @@ import SwiftUI
 
 struct BackgroundView: View {
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [
-            .blue,
-            .purple,
-            .red
-        ]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea()
+        ZStack {
+            
+            Color.black
+            
+            LinearGradient(gradient: Gradient(colors: [
+                .pink.opacity(0.2),
+                .blue.opacity(0.5)
+            ]), startPoint: .top, endPoint: .bottom)
+        }
+        .ignoresSafeArea()
+        
+           
     }
 }
 

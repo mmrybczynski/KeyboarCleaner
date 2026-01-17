@@ -6,19 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		C1E591CC2F0D632E00DA269B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C1E591CB2F0D632E00DA269B /* Localizable.xcstrings */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		C1424B042EE1EFEB00E0CA68 /* KeyboarCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboarCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1E591CB2F0D632E00DA269B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C1424B062EE1EFEB00E0CA68 /* KeyboarCleaner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = KeyboarCleaner;
+			sourceTree = "<group>";
+		};
+		C18F9ABA2F1C065600C7B11D /* Localizable */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -37,7 +37,7 @@
 		C1424AFB2EE1EFEB00E0CA68 = {
 			isa = PBXGroup;
 			children = (
-				C1E591CB2F0D632E00DA269B /* Localizable.xcstrings */,
+				C18F9ABA2F1C065600C7B11D /* Localizable */,
 				C1424B062EE1EFEB00E0CA68 /* KeyboarCleaner */,
 				C1424B052EE1EFEB00E0CA68 /* Products */,
 			);
@@ -68,6 +68,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				C1424B062EE1EFEB00E0CA68 /* KeyboarCleaner */,
+				C18F9ABA2F1C065600C7B11D /* Localizable */,
 			);
 			name = KeyboarCleaner;
 			packageProductDependencies = (
@@ -95,10 +96,8 @@
 			developmentRegion = pl;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
-				de,
 				pl,
+				en,
 			);
 			mainGroup = C1424AFB2EE1EFEB00E0CA68;
 			minimizedProjectReferenceProxies = 1;
@@ -117,7 +116,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1E591CC2F0D632E00DA269B /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +276,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Keyboard Cleaner";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,6 +311,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Keyboard Cleaner";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

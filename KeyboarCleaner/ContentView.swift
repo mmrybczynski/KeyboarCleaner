@@ -9,6 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var blocker = KeyboardBlocker()
+    
+    @State var keyboardActive: Color = .red
+    @State var keyboardInactive: Color = .white
+    
+    
     var body: some View {
         
         ZStack {
@@ -24,7 +29,7 @@ struct ContentView: View {
                                  blocker.stopBlocking()
                              }})) {
                                  HStack {
-                                     Text(.clearButtonOn)
+                                     Text("keyboardButton")
                                          .fontWeight(.bold)
                                          .foregroundStyle(Color(.white))
                                      Spacer()
@@ -36,13 +41,13 @@ struct ContentView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 50, height: 70)
-                        .foregroundColor(blocker.isBlocking ? .red : .white)
+                        .foregroundColor(blocker.isBlocking ? keyboardActive : keyboardInactive)
                         .symbolEffect(.bounce, value: blocker.isBlocking)
                     
-                    Text(blocker.isBlocking ? .keyboardDisabled : .keyboardEnabled)
+                    Text(blocker.isBlocking ? "klawiaturaON" : "klawiaturaOFF")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(blocker.isBlocking ? .red : .white)
+                        .foregroundColor(blocker.isBlocking ? keyboardActive : keyboardInactive)
                     
                     Spacer()
                 }
@@ -56,12 +61,12 @@ struct ContentView: View {
                     Link(destination: URL(string: "https://www.m-rybczynski.com")!) {
                         HStack {
                             Image(systemName: "link")
-                            Text(.readMore)
+                            Text("czytajWiecej")
                         }
                         .padding(.horizontal)
                         
                     }
-                    .help(.helpWeb)
+                    .help("Sprawdź")
                 }
             }
         }

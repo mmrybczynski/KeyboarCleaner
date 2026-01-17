@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  KeyboarCleaner
+
+  Created by Mateusz Rybczyński on 1/17/2026.
+  
+*/
+
+"czytajWiecej" = "Więcej";
+"keyboardButton" = "Włącz tryb czyszczenia klawiatury";
+"klawiaturaON" = "Klawiatura wyłączona";
+"klawiaturaOFF" = "Klawiatura włączona";
+"autor" = "Sprawdź stronę autora";
+
