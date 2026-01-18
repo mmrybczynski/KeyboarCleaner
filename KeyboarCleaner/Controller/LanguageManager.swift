@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class LanguageManager: ObservableObject {
+class LanguageManager {
     static let shared = LanguageManager()
     
     @AppStorage("selectedLanguage") private var storedLanguage: String?
