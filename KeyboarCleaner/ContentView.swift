@@ -51,6 +51,14 @@ struct ContentView: View {
                     
                     Spacer()
                 }
+                
+                Spacer()
+                
+                HStack {
+                    Spacer()
+                    Image(systemName: "globe")
+                    Text("language")
+                }
 
             }
             .padding(50)
