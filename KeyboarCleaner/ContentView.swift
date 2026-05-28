@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import ServiceManagement
 
 struct ContentView: View {
     @EnvironmentObject var blocker: KeyboardBlocker
@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var keyboardActive: Color = .red
     @State var keyboardInactive: Color = .white
     
+    @State private var launchAtLogin = false
     
     var body: some View {
         VStack {
@@ -30,6 +31,30 @@ struct ContentView: View {
                                  Spacer()
                              }
             }.toggleStyle(SwitchToggleStyle(tint: .blue))
+            
+            Toggle(
+                "Launch at login",
+                isOn: $launchAtLogin
+            )
+            .onChange(of: launchAtLogin) { enabled in
+
+                do {
+
+                    if enabled {
+                        try SMAppService.mainApp.register()
+                    } else {
+                        try SMAppService.mainApp.unregister()
+                    }
+
+                } catch {
+                    print(error)
+                }
+            }
+            .onAppear {
+
+                launchAtLogin =
+                    SMAppService.mainApp.status == .enabled
+            }
         }
         .padding()
         .frame(width: 250)
