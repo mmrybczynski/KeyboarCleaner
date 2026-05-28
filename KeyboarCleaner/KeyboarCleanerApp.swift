@@ -12,17 +12,12 @@ struct KeyboarCleanerApp: App {
     @AppStorage("selectedLanguage") private var selectedLanguageCode: String?
     @StateObject private var blocker = KeyboardBlocker()
     var body: some Scene {
-        /*WindowGroup {
-            ContentView()
-                .environmentObject(blocker)
-        }
-        .windowResizability(.contentSize)*/
-
         MenuBarExtra("Keyboard cleaner", systemImage: "keyboard") {
             ContentView()
                 .environmentObject(blocker)
         }
-        .windowResizability(.contentSize)
+        .menuBarExtraStyle(.window)
+        
     }
     
     var activeLanguage: String {

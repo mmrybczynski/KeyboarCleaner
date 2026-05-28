@@ -32,6 +32,8 @@ struct ContentView: View {
             }.toggleStyle(SwitchToggleStyle(tint: .blue))
         }
         .padding()
+        .frame(width: 250)
+        .padding()
         
         /*ZStack {
             BackgroundView()
