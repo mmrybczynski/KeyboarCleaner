@@ -7,16 +7,33 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
-    @StateObject private var blocker = KeyboardBlocker()
+    @EnvironmentObject var blocker: KeyboardBlocker
     
     @State var keyboardActive: Color = .red
     @State var keyboardInactive: Color = .white
     
     
     var body: some View {
+        VStack {
+            Toggle(isOn: Binding(get: {blocker.isBlocking},
+                                 set: {newValue in
+                         if newValue {blocker.startBlocking()
+                         } else {
+                             blocker.stopBlocking()
+                         }})) {
+                             HStack {
+                                 Text("keyboardButton")
+                                     .fontWeight(.bold)
+                                     .foregroundStyle(Color(.black))
+                                 Spacer()
+                             }
+            }.toggleStyle(SwitchToggleStyle(tint: .blue))
+        }
+        .padding()
         
-        ZStack {
+        /*ZStack {
             BackgroundView()
             
             VStack(spacing: 10) {
@@ -78,14 +95,12 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(width: 400, height: 200)
-        
-        
-        
+        .frame(width: 400, height: 200)*/
         
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(KeyboardBlocker())
 }

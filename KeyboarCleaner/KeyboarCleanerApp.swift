@@ -10,11 +10,17 @@ import SwiftUI
 @main
 struct KeyboarCleanerApp: App {
     @AppStorage("selectedLanguage") private var selectedLanguageCode: String?
+    @StateObject private var blocker = KeyboardBlocker()
     var body: some Scene {
-        WindowGroup {
+        /*WindowGroup {
             ContentView()
-                .environment(\.locale, .init(identifier: activeLanguage))
-                .id(activeLanguage)
+                .environmentObject(blocker)
+        }
+        .windowResizability(.contentSize)*/
+
+        MenuBarExtra("Keyboard cleaner", systemImage: "keyboard") {
+            ContentView()
+                .environmentObject(blocker)
         }
         .windowResizability(.contentSize)
     }
