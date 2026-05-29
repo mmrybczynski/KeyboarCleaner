@@ -15,6 +15,7 @@ struct KeyboarCleanerApp: App {
         MenuBarExtra("Keyboard cleaner", systemImage: "keyboard") {
             ContentView()
                 .environmentObject(blocker)
+                .environment(\.locale, Locale(identifier: activeLanguage))
         }
         .menuBarExtraStyle(.window)
         
@@ -25,9 +26,9 @@ struct KeyboarCleanerApp: App {
             return selected
         }
         // Fallback do systemu, jeśli nic nie wybrano
-        let systemLang = Locale.current.language.languageCode?.identifier ?? "pl"
+        let systemLang = Locale.current.language.languageCode?.identifier ?? "en"
         let available = Bundle.main.localizations
-        return available.contains(systemLang) ? systemLang : (available.first ?? "pl")
+        return available.contains(systemLang) ? systemLang : (available.first ?? "en")
     }
     
 }

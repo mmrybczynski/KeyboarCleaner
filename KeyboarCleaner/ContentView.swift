@@ -9,12 +9,27 @@ import SwiftUI
 import ServiceManagement
 
 struct ContentView: View {
+    @AppStorage("selectedLanguage") private var selectedLanguageCode: String?
+    @State private var showLanguageMenu = false
+    
     @EnvironmentObject var blocker: KeyboardBlocker
     
     @State var keyboardActive: Color = .red
     @State var keyboardInactive: Color = .white
     
     @State private var launchAtLogin = false
+    
+    private var languageManager: LanguageManager { .shared }
+    private var availableLanguageCodes: [String] {
+        // Upewnij się, że mamy też angielski; Bundle bywa z "Base"
+        var codes = languageManager.availableLanguages
+        if !codes.contains("en") { codes.insert("en", at: 0) }
+        // Usuń ewentualne "Base"
+        return codes.filter { $0.lowercased() != "en" }
+    }
+    private func displayName(for code: String) -> String {
+        languageManager.displayName(for: code)
+    }
     
     var body: some View {
         VStack {
@@ -57,6 +72,38 @@ struct ContentView: View {
 
                 launchAtLogin =
                     SMAppService.mainApp.status == .enabled
+            }
+            
+            Divider()
+            HStack {
+                
+                
+                Button("quit") {
+                    NSApplication.shared.terminate(nil)
+                }
+                .buttonStyle(.plain)
+                .foregroundColor(.primary)
+                
+                Spacer()
+                
+                Menu {
+                    // Pokaż aktualny wybór jako nagłówek (nieklikalny)
+                    let current = selectedLanguageCode ?? availableLanguageCodes.first ?? "en"
+                    Label("\(displayName(for: current))", systemImage: "checkmark")
+                        .foregroundStyle(.secondary)
+                    Divider()
+                    // Lista wszystkich dostępnych języków bez aktualnego
+                    ForEach(availableLanguageCodes.filter { $0 != current }, id: \.self) { code in
+                        Button {
+                            selectedLanguageCode = code
+                        } label: {
+                            Text(displayName(for: code))
+                        }
+                    }
+                } label: {
+                    Label(displayName(for: selectedLanguageCode ?? availableLanguageCodes.first ?? "en"), systemImage: "globe")
+                }
+                .help("Zmień język")
             }
             
         }

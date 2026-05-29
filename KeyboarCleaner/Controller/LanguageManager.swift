@@ -14,7 +14,7 @@ class LanguageManager {
     @AppStorage("selectedLanguage") private var storedLanguage: String?
     
     var availableLanguages: [String] {
-        Bundle.main.localizations.filter{ $0 != "pl"}
+        Bundle.main.localizations.filter{ $0 != "en"}
     }
     
     var currentLanguage: String {
@@ -22,11 +22,11 @@ class LanguageManager {
             if let stored = storedLanguage {
                 return stored
             }
-            let systemLanguage = Locale.current.language.languageCode?.identifier ?? "pl"
+            let systemLanguage = Locale.current.language.languageCode?.identifier ?? "en"
             if availableLanguages.contains(systemLanguage) {
                 return systemLanguage
             }
-            return availableLanguages.first ?? "pl"
+            return availableLanguages.first ?? "en"
             
         }
         set { storedLanguage = newValue }

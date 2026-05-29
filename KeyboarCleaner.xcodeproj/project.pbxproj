@@ -29,11 +29,6 @@
 			path = KeyboarCleaner;
 			sourceTree = "<group>";
 		};
-		C18F9ABA2F1C065600C7B11D /* Localizable */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Localizable;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +45,6 @@
 		C1424AFB2EE1EFEB00E0CA68 = {
 			isa = PBXGroup;
 			children = (
-				C18F9ABA2F1C065600C7B11D /* Localizable */,
 				C1424B062EE1EFEB00E0CA68 /* KeyboarCleaner */,
 				C1424B052EE1EFEB00E0CA68 /* Products */,
 			);
@@ -81,7 +75,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				C1424B062EE1EFEB00E0CA68 /* KeyboarCleaner */,
-				C18F9ABA2F1C065600C7B11D /* Localizable */,
 			);
 			name = KeyboarCleaner;
 			packageProductDependencies = (
@@ -106,11 +99,12 @@
 				};
 			};
 			buildConfigurationList = C1424AFF2EE1EFEB00E0CA68 /* Build configuration list for PBXProject "KeyboarCleaner" */;
-			developmentRegion = pl;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				pl,
 				en,
+				Base,
 			);
 			mainGroup = C1424AFB2EE1EFEB00E0CA68;
 			minimizedProjectReferenceProxies = 1;
