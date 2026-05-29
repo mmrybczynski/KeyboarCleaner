@@ -32,10 +32,13 @@ struct ContentView: View {
                              }
             }.toggleStyle(SwitchToggleStyle(tint: .blue))
             
-            Toggle(
-                "Launch at login",
-                isOn: $launchAtLogin
-            )
+            Toggle(isOn: $launchAtLogin) {
+                HStack {
+                    Text("launchAtLogin")
+                    Spacer()
+                }
+            }
+            .toggleStyle(SwitchToggleStyle(tint: .blue))
             .onChange(of: launchAtLogin) { enabled in
 
                 do {
@@ -55,10 +58,10 @@ struct ContentView: View {
                 launchAtLogin =
                     SMAppService.mainApp.status == .enabled
             }
+            
         }
         .padding()
         .frame(width: 250)
-        .padding()
         
         /*ZStack {
             BackgroundView()
