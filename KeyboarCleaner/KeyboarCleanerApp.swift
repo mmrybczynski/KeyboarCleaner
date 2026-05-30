@@ -11,14 +11,14 @@ import SwiftUI
 struct KeyboarCleanerApp: App {
     @AppStorage("selectedLanguage") private var selectedLanguageCode: String?
     @StateObject private var blocker = KeyboardBlocker()
+
     var body: some Scene {
-        MenuBarExtra("Keyboard cleaner", systemImage: "keyboard") {
+        MenuBarExtra("Keyboard cleaner", image: "menuExtraBar") {
             ContentView()
                 .environmentObject(blocker)
                 .environment(\.locale, Locale(identifier: activeLanguage))
         }
         .menuBarExtraStyle(.window)
-        
     }
     
     var activeLanguage: String {
