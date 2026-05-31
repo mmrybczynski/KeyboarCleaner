@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     
     @AppStorage("selectedLanguage") private var selectedLanguageCode: String?
+    @AppStorage("selectedIcon") private var selectedIcon: String = "menuExtraBar"
     @State private var showLanguageMenu = false
     
     private var languageManager: LanguageManager { .shared }
@@ -27,9 +28,55 @@ struct SettingsView: View {
     var body: some View {
         VStack {
             
-            HStack {
-                Image("menuExtraBar")
-                Image("menuExtraBarHover")
+            HStack(spacing: 12) {
+                let icon1 = "menuExtraBar"
+                let icon2 = "menuExtraBarHover"
+
+                Image(icon1)
+                    .resizable()
+                    .interpolation(.high)
+                    .antialiased(true)
+                    .renderingMode(.original)
+                    .frame(width: 56 ,height: 56)
+                    .scaledToFit()
+                    .padding(6)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(selectedIcon == icon1 ? Color.accentColor.opacity(0.15) : Color.clear)
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(selectedIcon == icon1 ? Color.accentColor : Color.gray.opacity(0.3), lineWidth: selectedIcon == icon1 ? 2 : 1)
+                    )
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedIcon = icon1
+                    }
+                    .accessibilityAddTraits(selectedIcon == icon1 ? .isSelected : [])
+                    .accessibilityLabel(Text("menuExtraBar"))
+
+                Image(icon2)
+                    .resizable()
+                    .interpolation(.high)
+                    .antialiased(true)
+                    .renderingMode(.original)
+                    .frame(width: 56 ,height: 56)
+                    .scaledToFit()
+                    .padding(6)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(selectedIcon == icon2 ? Color.accentColor.opacity(0.15) : Color.clear)
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(selectedIcon == icon2 ? Color.accentColor : Color.gray.opacity(0.3), lineWidth: selectedIcon == icon2 ? 2 : 1)
+                    )
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedIcon = icon2
+                    }
+                    .accessibilityAddTraits(selectedIcon == icon2 ? .isSelected : [])
+                    .accessibilityLabel(Text("menuExtraBarHover"))
             }
             
             Menu {
@@ -53,7 +100,7 @@ struct SettingsView: View {
         }
         .frame(width: 400, height: 400)
         .environment(\.locale, Locale(identifier: selectedLanguageCode ?? Locale.current.language.languageCode?.identifier ?? "en"))
-        .background(Color.gray.opacity(0.2))
+        .background(Color(red: 0.9, green: 0.9, blue: 0.9, opacity: 0.2))
         .navigationTitle("settings")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
