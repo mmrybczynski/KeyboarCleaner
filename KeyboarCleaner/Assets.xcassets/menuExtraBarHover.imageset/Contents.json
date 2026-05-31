@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "menuExtraBarHover.png",
+      "filename" : "menuExtraBarHover18.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "menuExtraBarHover 1.png",
+      "filename" : "menuExtraBarHover36.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "menuExtraBarHover 2.png",
+      "filename" : "menuExtraBarHover54.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

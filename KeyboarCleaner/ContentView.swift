@@ -21,15 +21,15 @@ struct ContentView: View {
     
     private var languageManager: LanguageManager { .shared }
     private var availableLanguageCodes: [String] {
-        // Upewnij się, że mamy też angielski; Bundle bywa z "Base"
         var codes = languageManager.availableLanguages
         if !codes.contains("en") { codes.insert("en", at: 0) }
-        // Usuń ewentualne "Base"
-        return codes.filter { $0.lowercased() != "en" }
+        return codes.filter { $0.lowercased() != "base" }
     }
     private func displayName(for code: String) -> String {
         languageManager.displayName(for: code)
     }
+    
+    @Environment(\.openWindow) private var openWindow
     
     var body: some View {
         VStack {
@@ -85,6 +85,10 @@ struct ContentView: View {
                 .foregroundColor(.primary)
                 
                 Spacer()
+                
+                Button("Settings...") {
+                    openWindow(id: "settings")
+                }
                 
                 Menu {
                     // Pokaż aktualny wybór jako nagłówek (nieklikalny)
@@ -181,3 +185,4 @@ struct ContentView: View {
     ContentView()
         .environmentObject(KeyboardBlocker())
 }
+

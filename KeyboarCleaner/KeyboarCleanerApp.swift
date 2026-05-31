@@ -10,15 +10,24 @@ import SwiftUI
 @main
 struct KeyboarCleanerApp: App {
     @AppStorage("selectedLanguage") private var selectedLanguageCode: String?
+    
+    @AppStorage("selectedIcon") private var selectedIcon: String = "menuExtraBar"
+    
     @StateObject private var blocker = KeyboardBlocker()
 
     var body: some Scene {
-        MenuBarExtra("Keyboard cleaner", image: "menuExtraBar") {
+        MenuBarExtra("Keyboard cleaner", image: selectedIcon) {
             ContentView()
                 .environmentObject(blocker)
                 .environment(\.locale, Locale(identifier: activeLanguage))
         }
         .menuBarExtraStyle(.window)
+        
+        Window("Settings", id: "settings") {
+           SettingsView()
+                .environment(\.locale, Locale(identifier: activeLanguage))
+        }
+        .defaultSize(width: 400, height: 400)
     }
     
     var activeLanguage: String {
