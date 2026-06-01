@@ -27,7 +27,7 @@ struct KeyboarCleanerApp: App {
            SettingsView()
                 .environment(\.locale, Locale(identifier: activeLanguage))
         }
-        .defaultSize(width: 400, height: 400)
+        .defaultSize(width: 600, height: 400)
     }
     
     var activeLanguage: String {
