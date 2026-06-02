@@ -17,3 +17,7 @@
 "settings" = "Ustawienia";
 "general" = "Ogólne";
 "updates" = "Aktualizacje";
+"language" = "Język";
+"appicon" = "Ikona aplikacji";
+"interface" = "Język interfajsu aplikacji";
+"select" = "Wybierz język aplikacji";

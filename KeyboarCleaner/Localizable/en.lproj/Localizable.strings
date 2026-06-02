@@ -16,3 +16,7 @@
 "settings" = "Settings";
 "general" = "General";
 "updates" = "Updates";
+"language" = "Language";
+"appicon" = "App Icon";
+"interface" = "Interface Language";
+"select" = "Select your preferred language for the app interface";
