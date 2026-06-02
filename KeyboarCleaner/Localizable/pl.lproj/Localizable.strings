@@ -15,3 +15,5 @@
 "launchAtLogin" = "Uruchom przy logowaniu";
 "quit" = "Zamknij";
 "settings" = "Ustawienia";
+"general" = "Ogólne";
+"updates" = "Aktualizacje";

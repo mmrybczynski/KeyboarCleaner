@@ -14,3 +14,5 @@
 "launchAtLogin" = "Launch at login";
 "quit" = "Quit";
 "settings" = "Settings";
+"general" = "General";
+"updates" = "Updates";
