@@ -14,7 +14,7 @@ struct DynamicContentView: View {
         VStack(alignment: .leading, spacing: 0) {
             // Nagłówek widoku głównego, dopasowany do makiety
             HStack {
-                Text(selectedTab.rawValue)
+                Text(LocalizedStringKey(selectedTab.rawValue))
                     .font(.system(size: 22, weight: .semibold))
                 Spacer()
             }

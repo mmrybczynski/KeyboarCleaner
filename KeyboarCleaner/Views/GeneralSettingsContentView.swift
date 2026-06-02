@@ -29,7 +29,7 @@ struct GeneralSettingsContentView: View {
             
             // Sekcja: App Icon
             VStack(alignment: .leading, spacing: 12) {
-                Text("App Icon")
+                Text("appicon")
                     .font(.system(size: 14, weight: .bold))
                 
                 HStack(spacing: 14) {
@@ -46,7 +46,7 @@ struct GeneralSettingsContentView: View {
             
             // Sekcja: Language
             VStack(alignment: .leading, spacing: 10) {
-                Text("Language")
+                Text("language")
                     .font(.system(size: 14, weight: .bold))
                 
                 HStack(spacing: 12) {
@@ -56,9 +56,9 @@ struct GeneralSettingsContentView: View {
                         .frame(width: 24, height: 24)
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Interface Language")
+                        Text("interface")
                             .font(.system(size: 13, weight: .medium))
-                        Text("Select your preferred language for the app interface")
+                        Text("select")
                             .font(.system(size: 11))
                             .foregroundColor(.secondary)
                     }

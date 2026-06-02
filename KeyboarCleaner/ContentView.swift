@@ -42,7 +42,6 @@ struct ContentView: View {
                              HStack {
                                  Text("keyboardButton")
                                      .fontWeight(.bold)
-                                     .foregroundStyle(Color(.black))
                                  Spacer()
                              }
             }.toggleStyle(SwitchToggleStyle(tint: .blue))
@@ -86,28 +85,9 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Button("Settings...") {
+                Button("settings") {
                     openWindow(id: "settings")
                 }
-                
-                Menu {
-                    // Pokaż aktualny wybór jako nagłówek (nieklikalny)
-                    let current = selectedLanguageCode ?? availableLanguageCodes.first ?? "en"
-                    Label("\(displayName(for: current))", systemImage: "checkmark")
-                        .foregroundStyle(.secondary)
-                    Divider()
-                    // Lista wszystkich dostępnych języków bez aktualnego
-                    ForEach(availableLanguageCodes.filter { $0 != current }, id: \.self) { code in
-                        Button {
-                            selectedLanguageCode = code
-                        } label: {
-                            Text(displayName(for: code))
-                        }
-                    }
-                } label: {
-                    Label(displayName(for: selectedLanguageCode ?? availableLanguageCodes.first ?? "en"), systemImage: "globe")
-                }
-                .help("Zmień język")
             }
             
         }

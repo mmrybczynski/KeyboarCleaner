@@ -22,9 +22,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
 }
 
 struct SettingsView: View {
-    
-    
-    
+
     @State private var selectedTab: SettingsTab? = .general
     
     var body: some View {
