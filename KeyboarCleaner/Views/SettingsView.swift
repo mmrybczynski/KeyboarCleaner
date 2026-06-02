@@ -169,7 +169,7 @@ struct SettingsView: View {
                     .background(BlurView(material: .sidebar, blendingMode: .withinWindow))
                 }
             }
-            .frame(minWidth: 200, idealWidth: 220, maxWidth: 240)
+            .frame(minWidth: 220, idealWidth: 220, maxWidth: 220)
             
             DynamicContentView(selectedTab: selectedTab!)
             
