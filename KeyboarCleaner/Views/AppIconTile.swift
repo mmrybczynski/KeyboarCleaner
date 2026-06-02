@@ -23,8 +23,7 @@ struct AppIconTile: View {
                         RoundedRectangle(cornerRadius: 14)
                             .stroke(isSelected ? Color.blue : Color.primary.opacity(0.1), lineWidth: isSelected ? 2 : 1)
                     )
-                
-                // Miniatura SF Symbol wewnątrz kafelka
+
                 Image(iconName)
                     .font(.system(size: 32))
                     .foregroundColor(isSelected ? .blue : .primary.opacity(0.7))
