@@ -33,11 +33,11 @@ struct GeneralSettingsContentView: View {
                     .font(.system(size: 14, weight: .bold))
                 
                 HStack(spacing: 14) {
-                    AppIconTile(iconName: "menuExtraBar", title: "Classic Blue", isSelected: selectedIcon == "menuExtraBar")
+                    AppIconTile(iconName: "menuExtraBarBig", title: "Classic Blue", isSelected: selectedIcon == "menuExtraBar")
                         .onTapGesture {
                             selectedIcon = "menuExtraBar"
                         }
-                    AppIconTile(iconName: "menuExtraBarHover", title: "Midnight", isSelected: selectedIcon == "menuExtraBarHover")
+                    AppIconTile(iconName: "menuExtraBarHoverBig", title: "Midnight", isSelected: selectedIcon == "menuExtraBarHover")
                         .onTapGesture {
                             selectedIcon = "menuExtraBarHover"
                         }

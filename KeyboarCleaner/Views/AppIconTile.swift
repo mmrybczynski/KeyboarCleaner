@@ -25,6 +25,7 @@ struct AppIconTile: View {
                     )
 
                 Image(iconName)
+                    .resizable()
                     .font(.system(size: 32))
                     .foregroundColor(isSelected ? .blue : .primary.opacity(0.7))
                     .frame(width: 84, height: 84)
