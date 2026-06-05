@@ -17,7 +17,7 @@ class UpdateManager: ObservableObject {
     private let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     
     func checkForUpdates() async -> Bool {
-        guard let url = URL(string: "https://m-rybczynski.com/applications/keyclean/main.json") else {
+        guard let url = URL(string: "https://www.m-rybczynski.com/applications/keyclean/main.json") else {
             return false
         }
         

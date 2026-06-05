@@ -31,7 +31,7 @@ struct DynamicContentView: View {
                     case .general:
                         GeneralSettingsContentView()
                     case .updates:
-                        Text(LocalizedStringKey("updates")).foregroundColor(.secondary)
+                        UpdateView()
                     }
                 }
                 .padding(24)
