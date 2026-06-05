@@ -24,6 +24,7 @@ enum SettingsTab: String, CaseIterable, Identifiable {
 struct SettingsView: View {
 
     @State private var selectedTab: SettingsTab? = .general
+    private let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
     
     var body: some View {
         /*VStack {
@@ -148,7 +149,8 @@ struct SettingsView: View {
                     Divider()
                     HStack(spacing: 12) {
                         // Logo aplikacji oparte na SF Symbols
-                        Image(systemName: "wand.and.stars")
+                        Image(nsImage: NSApplication.shared.applicationIconImage)
+                            .resizable()
                             .font(.system(size: 18))
                             .frame(width: 32, height: 32)
                             .background(Color.blue)
@@ -158,7 +160,7 @@ struct SettingsView: View {
                         VStack(alignment: .leading, spacing: 1) {
                             Text("KeyClean")
                                 .font(.system(size: 13, weight: .bold))
-                            Text("Version 2.4.0 (Stable Build)")
+                            Text("Version \(version)")
                                 .font(.system(size: 10))
                                 .foregroundColor(.secondary)
                         }
