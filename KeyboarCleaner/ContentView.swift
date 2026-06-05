@@ -53,24 +53,19 @@ struct ContentView: View {
                 }
             }
             .toggleStyle(SwitchToggleStyle(tint: .blue))
-            .onChange(of: launchAtLogin) { enabled in
-
+            .onChange(of: launchAtLogin) { oldValue, newValue in
                 do {
-
-                    if enabled {
+                    if newValue {
                         try SMAppService.mainApp.register()
                     } else {
                         try SMAppService.mainApp.unregister()
                     }
-
                 } catch {
                     print(error)
                 }
             }
             .onAppear {
-
-                launchAtLogin =
-                    SMAppService.mainApp.status == .enabled
+                launchAtLogin = SMAppService.mainApp.status == .enabled
             }
             
             Divider()
@@ -87,6 +82,13 @@ struct ContentView: View {
                 
                 Button("settings") {
                     openWindow(id: "settings")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                        if let window = NSApp.windows.first(where: { $0.identifier?.rawValue == "settings" }) {
+                            window.level = .floating
+                            window.makeKeyAndOrderFront(nil)
+                            NSApp.activate(ignoringOtherApps: true)
+                        }
+                    }
                 }
             }
             
