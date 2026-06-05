@@ -16,7 +16,14 @@
 "settings" = "Settings";
 "general" = "General";
 "updates" = "Updates";
+"updTitile" = "App update";
+"updDesc" = "Check update app";
+"updBtn" = "Check update";
 "language" = "Language";
 "appicon" = "App Icon";
 "interface" = "Interface Language";
 "select" = "Select your preferred language for the app interface";
+
+"appMotto" = "Clean your keyboard";
+"updateStatus" = "App is up to date";
+"upd" = "Update";

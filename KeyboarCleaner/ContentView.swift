@@ -94,7 +94,7 @@ struct ContentView: View {
             
         }
         .padding()
-        .frame(width: 250)
+        .frame(width: 350)
         
         /*ZStack {
             BackgroundView()
