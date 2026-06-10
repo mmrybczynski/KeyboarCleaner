@@ -72,7 +72,7 @@ struct UpdateView: View {
                             .cornerRadius(14)
                         
                         VStack(alignment: .leading) {
-                            Text("KeyClean")
+                            Text("WipeKeys")
                                 .font(.title)
                             Text("appMotto")
                         }

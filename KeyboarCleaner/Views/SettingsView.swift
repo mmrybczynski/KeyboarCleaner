@@ -158,7 +158,7 @@ struct SettingsView: View {
                             .cornerRadius(8)
                         
                         VStack(alignment: .leading, spacing: 1) {
-                            Text("KeyClean")
+                            Text("WipeKeys")
                                 .font(.system(size: 13, weight: .bold))
                             Text("Version \(version)")
                                 .font(.system(size: 10))
