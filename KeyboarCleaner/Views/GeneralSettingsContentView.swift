@@ -44,6 +44,31 @@ struct GeneralSettingsContentView: View {
                 }
             }
             
+            VStack(alignment: .leading, spacing: 10) {
+                HStack {
+                    Button {
+                        openAccessibilityPreferences()
+                    } label: {
+                        HStack(spacing: 6) {
+                            Image(systemName: "hand.tap")
+                            Text("Open Accessibility Settings")
+                        }
+                    }
+                    .buttonStyle(.link)
+                    .padding(.bottom, 8)
+                    
+                    Spacer()
+                }
+                .padding(.all, 14)
+                .background(Color.primary.opacity(0.03))
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.primary.opacity(0.06), lineWidth: 1)
+                )
+                
+            }
+            
             // Sekcja: Language
             VStack(alignment: .leading, spacing: 10) {
                 Text("language")
@@ -92,6 +117,19 @@ struct GeneralSettingsContentView: View {
                         .stroke(Color.primary.opacity(0.06), lineWidth: 1)
                 )
             }
+        }
+    }
+    
+    
+    private func openAccessibilityPreferences() {
+        // Works on macOS Ventura and newer System Settings
+        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
+            NSWorkspace.shared.open(url)
+            return
+        }
+        // Fallback for older macOS (System Preferences)
+        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
+            NSWorkspace.shared.open(url)
         }
     }
 }
