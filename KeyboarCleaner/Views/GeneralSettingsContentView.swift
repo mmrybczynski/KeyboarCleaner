@@ -46,16 +46,31 @@ struct GeneralSettingsContentView: View {
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Button {
-                        openAccessibilityPreferences()
-                    } label: {
-                        HStack(spacing: 6) {
-                            Image(systemName: "hand.tap")
-                            Text("Open Accessibility Settings")
+                    VStack {
+                        Button {
+                            openAccessibilityPreferences()
+                        } label: {
+                            HStack(spacing: 6) {
+                                Image(systemName: "hand.tap")
+                                Text("Open Accessibility Settings")
+                            }
                         }
+                        .buttonStyle(.link)
+                        .padding(.bottom, 8)
+                        
+                        Button {
+                                openInputMonitoringPreferences()
+                            } label: {
+                                HStack(spacing: 6) {
+                                    Image(systemName: "keyboard")
+                                    Text("Open Input Monitoring Settings")
+                                }
+                            }
+                            .buttonStyle(.link)
+                            .padding(.bottom, 8)
                     }
-                    .buttonStyle(.link)
-                    .padding(.bottom, 8)
+                
+                    
                     
                     Spacer()
                 }
@@ -129,6 +144,12 @@ struct GeneralSettingsContentView: View {
         }
         // Fallback for older macOS (System Preferences)
         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
+            NSWorkspace.shared.open(url)
+        }
+    }
+    
+    private func openInputMonitoringPreferences() {
+        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent") {
             NSWorkspace.shared.open(url)
         }
     }
