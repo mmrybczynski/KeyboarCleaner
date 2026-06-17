@@ -46,7 +46,7 @@ struct GeneralSettingsContentView: View {
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    VStack {
+                    VStack(alignment: .leading) {
                         Button {
                             openAccessibilityPreferences()
                         } label: {
