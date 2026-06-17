@@ -9,5 +9,7 @@
 		<string>en</string>
 		<string>Polish</string>
 	</array>
+	<key>NSAccessibilityUsageDescription</key>
+	<string>Aplikacja potrzebuje uprawnień aby odczytywać dane z klawiatury</string>
 </dict>
 </plist>
