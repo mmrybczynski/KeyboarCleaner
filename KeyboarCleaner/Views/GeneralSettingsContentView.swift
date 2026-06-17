@@ -52,7 +52,7 @@ struct GeneralSettingsContentView: View {
                         } label: {
                             HStack(spacing: 6) {
                                 Image(systemName: "hand.tap")
-                                Text("Open Accessibility Settings")
+                                Text("accesibilityLaabel")
                             }
                         }
                         .buttonStyle(.link)
@@ -63,7 +63,7 @@ struct GeneralSettingsContentView: View {
                             } label: {
                                 HStack(spacing: 6) {
                                     Image(systemName: "keyboard")
-                                    Text("Open Input Monitoring Settings")
+                                    Text("inputMonitoringLabel")
                                 }
                             }
                             .buttonStyle(.link)

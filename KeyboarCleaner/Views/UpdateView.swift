@@ -81,7 +81,7 @@ struct UpdateView: View {
                         Spacer()
                         
                         if toUpdate {
-                            Button("Aktualizuj") {
+                            Button("upd") {
                                 Task {
                                     if let url = URL(string: "https://apps.apple.com/pl/app/twoja-aplikacja/id6757436231") {
                                         openURL(url)
@@ -89,7 +89,7 @@ struct UpdateView: View {
                                 }
                             }
                         } else {
-                            Text("Aplikacja jest najnowsza")
+                            Text("updateStatus")
                         }
                         
                     }
