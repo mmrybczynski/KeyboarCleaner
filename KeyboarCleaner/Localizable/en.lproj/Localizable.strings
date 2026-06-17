@@ -27,3 +27,6 @@
 "appMotto" = "Clean your keyboard";
 "updateStatus" = "App is up to date";
 "upd" = "Update";
+
+"accesibilityLaabel" = "Open Accessibility Settings";
+"inputMonitoringLabel" = "Open Input Monitoring Settings";

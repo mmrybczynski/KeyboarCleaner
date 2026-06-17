@@ -28,3 +28,6 @@
 "appMotto" = "Wyczyść swoją klawiaturę";
 "updateStatus" = "Aplikacja jest najnowsza";
 "upd" = "Aktualizuj";
+
+"accesibilityLaabel" = "Otwórz ustawienia dostępności";
+"inputMonitoringLabel" = "Otwórz ustawienia monitorwania wejścia";
